@@ -1,8 +1,8 @@
 <?php
 $host = 'ivanbasededatos.mysql.database.azure.com';
 $dbname = 'foliodb';
-$username = 'Administrador@ivanbasededatos';
-$password = 'tu-contraseña-aquí';
+$username = 'Administrador';
+$password = '2628Admin';
 $port = 3306;
 
 // Ruta al certificado SSL que descargaste
