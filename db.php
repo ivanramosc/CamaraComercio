@@ -6,8 +6,8 @@ error_reporting(E_ALL);
 // Datos de conexión a MySQL en Azure
 $host = 'ivanbasededatos.mysql.database.azure.com';
 $dbname = 'foliodb';
-$username = 'Administrador@ivanbasededatos';
-$password = 'tu-contraseña-aquí';
+$username = 'Administrador';
+$password = '2628Admin';
 $port = 3306;
 
 // Ruta del certificado SSL
