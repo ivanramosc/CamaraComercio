@@ -1,14 +1,21 @@
 <?php
-$host = 'ivanbasededatos.mysql.database.azure.com'; // Hostname del servidor MySQL en Azure
-$dbname = 'foliodb';                                // Nombre de tu base de datos
-$username = 'Administrador';        // Usuario con @nombreServidor
-$password = '2628Admin';                   // Tu contraseña real
+$host = 'ivanbasededatos.mysql.database.azure.com';
+$dbname = 'foliodb';
+$username = 'Administrador@ivanbasededatos';
+$password = 'tu-contraseña-aquí';
 $port = 3306;
 
+// Ruta al certificado SSL que descargaste
+$ssl_cert = __DIR__ . '/DigiCertGlobalRootCA.crt.pem';
+
+$options = [
+    PDO::MYSQL_ATTR_SSL_CA => $ssl_cert,
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+];
+
 try {
-    $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname", $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Mostrar errores
-    echo "✅ ¡Conexión exitosa!";
+    $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname", $username, $password, $options);
+    echo "✅ ¡Conexión segura exitosa!";
 } catch (PDOException $e) {
     die("❌ Error de conexión: " . $e->getMessage());
 }
